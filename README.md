@@ -16,3 +16,35 @@ be implemented in our existing grammar: that is, ...
 Relative clauses refer to some clause that modifies an entity, indicated in English by relative
 pronouns (i.e., who, when, that) - this is illustrated in the sentece "I see the forest **where**
 I used to hike", where **where** modifies _the forest_.
+
+
+## Part I - Motivation
+
+...
+
+## Part II - Implementation
+
+...
+
+## Part III - Remaining Challenges and Future Refinement
+
+...
+
+
+## Contributions
+
+| Team Member  | Contributions                                             |
+|--------------|-----------------------------------------------------------|
+| Ema Nesic  | Github implementation, supplmeneting theory, ... |
+| Romaisaa Ahmed | ... |
+| Yeganeh Salehi | ... |
+
+## References
+
+[1]
+
+[2]
+
+[3]
+
+
