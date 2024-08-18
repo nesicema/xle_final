@@ -4,18 +4,12 @@ _Group members: Ema Nesic, Romaisaa Ahmed, Yeganeh Salehi_
 
 ## Introduction
 
-In response to the assignment prompt of capturing a linguistic phenomenon in xle structure, our 
-group looked to English relative clauses: seeing that all three members have different native 
-languages, we turned to English grammatical constructions as a common denominator. Additionally, 
-we chose to look at relative clauses, a linguistic phenomenon in English that had not previously 
-been discussed in the present course, but that is also morphologically straightforward and could 
-be implemented in our existing grammar: that is, ...
+With the assignment prompt of accounting for a linguistic phenomenon in xle structure, our group looked to capture English relative clauses - seeing that all three members have different native languages, we reasoned English grammatical constructions would serve well as a common denominator. Additionally, we chose to look at relative clauses, a cross-linguistic phenomenon that, in addition to not having been previously discussed in the present course, is syntactically straightforward and may be implemented in our existing grammar.
 
 
 ### Relative Clauses
-Relative clauses refer to some clause that modifies an entity, indicated in English by relative
-pronouns (i.e., who, when, that) - this is illustrated in the sentece "I see the forest **where**
-I used to hike", where **where** modifies _the forest_.
+Relative clauses refer to some clause that modifies a preceding entity, indicated in English by relative pronouns (i.e., who, when, that) - this is illustrated in the sentence "I see the forest **where**
+I used to hike", where the pronoun **where** modifies _the forest_.
 
 
 ## Part I - Motivation
@@ -41,7 +35,7 @@ I used to hike", where **where** modifies _the forest_.
 
 ## References
 
-[1]
+[1] Fong, Sandiway & Ginsburg, Jason. (2023). On the computational modeling of English relative clauses. Open Linguistics. 9. 10.1515/opli-2022-0246. 
 
 [2]
 
