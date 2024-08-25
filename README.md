@@ -4,7 +4,7 @@ _Group members: Ema Nesic, Romaisaa Ahmed, Yeganeh Salehi_
 
 ## Introduction
 
-With the assignment prompt of accounting for a linguistic phenomenon in xle structure, our group looked to capture English relative clauses - seeing that all three members have different native languages, we reasoned English grammatical constructions would serve well as a common denominator. Additionally, we chose to look at relative clauses, a cross-linguistic phenomenon that, in addition to not having been previously discussed in the present course, is syntactically straightforward and may be implemented in our existing grammar.
+With the assignment prompt of accounting for a linguistic phenomenon in xle structure, our group looked to capture English relative clauses: seeing that all three members have different native languages, we reasoned English grammatical constructions would serve well as a common denominator. Additionally, we chose to look at relative clauses, a cross-linguistic phenomenon that, in addition to not having been previously discussed in the present course, is syntactically straightforward and may be implemented in our existing grammar.
 
 
 ### Relative Clauses
