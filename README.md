@@ -29,7 +29,7 @@ I used to hike", where the pronoun **where** modifies _the forest_.
 
 | Team Member  | Contributions                                             |
 |--------------|-----------------------------------------------------------|
-| Ema Nesic  | Github implementation, supplmeneting theory, ... |
+| Ema Nesic  | Github implementation, supplementary theory, ... |
 | Romaisaa Ahmed | ... |
 | Yeganeh Salehi | ... |
 
