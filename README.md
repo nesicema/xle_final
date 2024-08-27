@@ -1,6 +1,6 @@
 # Grammar Development Final Project: English Relative Clauses
 
-_Group members: Ema Nesic, Romaisaa Ahmed, Yeganeh Salehi_
+_Group members: Ema Nesic, Romaisaa Ahmed, Yeganeh Mohammad Salehi_
 
 ## Introduction
 
@@ -21,9 +21,15 @@ Additionally, relative clauses are composed of a marker clause as well as a recu
 
 ## Part II - Implementation
 
+
+Our first goal therefore was to represent the most basic of relative clause examples, "the man who ate slept": here, the subject of the embedded relative clause is __the man__.
+
+Next, we looked to capture the passive construction, exhibited in the sentence "the bone that was thrown shattered".
 ...
 
 ## Part III - Remaining Challenges and Future Refinement
+
+In some instances, these embedded relative clauses may be accompanied by the relevant punctuation (i.e., "the man who ate, slept"); because the relative positions of the words are illustrated in the syntactic tree (i.e., whether a verb occurs in the matrix or embedded clause), we reasoned that punctuation may be omitted; this, however, may be implemented in a future project.
 
 ...
 
@@ -34,7 +40,7 @@ Additionally, relative clauses are composed of a marker clause as well as a recu
 |--------------|-----------------------------------------------------------|
 | Ema Nesic  | Github implementation, supplementary theory, ... |
 | Romaisaa Ahmed | ... |
-| Yeganeh Salehi | ... |
+| Yeganeh Mohammad Salehi | ... |
 
 ## References
 
