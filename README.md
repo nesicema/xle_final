@@ -17,6 +17,10 @@ I used to hike", where the pronoun **where** modifies _the forest_.
 Having looked at the relevant c-structure for relative clauses, we deduced that this embedded clause must occur within the noun phrase (NP); thus, the NP had to be modified to accomodate this optional information, as an utterance may be grammatical in either reading (i.e., "the man slept" vs. "the man who ate slept").
 Additionally, relative clauses are composed of a marker clause as well as a recursive sentence structure - these are denoted as C and S, respectively.
 
+
+![alt text](http://i.pinimg.com/474x/3c/02/d3/3c02d3c06ba7cab08cd9c7de3e9762e3.jpg)
+
+
 ...
 
 ## Part II - Implementation
