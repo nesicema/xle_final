@@ -8,27 +8,28 @@ Given the assignment prompt of accounting for a linguistic phenomenon in XLE, ou
 
 
 ### Relative Clauses
-A relative clause is a subordinate clause that modifies its preceding noun phrase (de Vries, 2018). Within this embedded clause, the relative marker (i.e., the head of the embedded phrase), is indicated by English relative pronouns (i.e., who, when, that, etc.); these elements, while informative, are optional in English relative clauses, a finding that is not consistent across languages (i.e., French, where the absence of the relative marker renders the construction ungrammatical). This is illustrated in the English sentence "The trail that I hiked is steep”, where the pronoun **where** modifies _the trail; conversely, “The trail I hiked is steep” is an equally permissible construction*, and indeed, an example of linguistic variation (Newbrook, 2003). 
+A relative clause is a subordinate clause that modifies its preceding noun phrase (de Vries, 2018). Within this embedded clause, the relative marker (i.e., the head of the embedded phrase), is indicated by English relative pronouns (i.e., who, when, that, etc.); these elements, while informative, are optional in English relative clauses, a finding that is not consistent across languages (i.e., French, where the absence of the relative marker renders the construction ungrammatical). This is illustrated in the English sentence "The trail that I hiked is steep”, where the pronoun **where** modifies _the trail; conversely, “The trail I hiked is steep” is an equally permissible construction[1], and indeed, an example of linguistic variation (Newbrook, 2003). 
 
 Further, there exists variation in the choice of marker - although technically grammatical to use ‘who’ with animate, and ‘that’ with inanimate subjects, native English speakers confound the two - as a result, this is reflected in the grammar, where either variant results in a correct parse; thus an animacy restraint was omitted).
 
 ## Part I - Motivation
 
-Having looked at the relevant c-structure for relative clauses, we deduced that this embedded clause must occur within the noun phrase (NP); thus, the NP had to be modified to accomodate this optional information, as an utterance may be grammatical in either reading (i.e., "the man slept" vs. "the man who ate slept").
-Additionally, relative clauses are composed of a marker clause as well as a recursive sentence structure - these are denoted as C and S, respectively.
-
+Having looked at the relevant c-structure for relative clauses, then, we deduced that this subordinate clause relating additional information as to its preceding clause must be embedded within the noun phrase (NP).
 
 ![alt text](http://i.pinimg.com/474x/3c/02/d3/3c02d3c06ba7cab08cd9c7de3e9762e3.jpg)
 
+Thus, the rules governing NPs must be modified to accommodate this embedded clause, as an utterance may be grammatical in either reading (i.e., "the man slept" vs. "the man who ate slept"): here, the clause is composed of the head marker (denoted as R) as well as a simplified sentence structure, denoted as ES (i.e., embedded sentence).
+There are several common relative clause pronouns in English - that, who, which, whose, whom, etc. Some of these pronouns are restricted to certain types of entities (i.e., whom for accusative case, who for animate, and which or that for inanimate entities), and so these features may be encoded as supplementary semantic information.
 
+Finally, there exist two types of relative clauses: defining and non-defining clauses. In the first variant, ...
 ...
 
 ## Part II - Implementation
 
+Our first goal therefore was to represent the most basic of relative clause examples, “the otter that ate slept”: here, the subject of the embedded relative clause is ‘the otter’, while the pronoun is, accordingly, set to ‘that’, on account of its subject being inanimate (i.e., non-human)[2]. 
+In our grammar file, while the matrix sentence, noun phrase and verb phrase are indicated by S, NP, and VP, respectively, the embedded relative clause sentence, noun phrase and verb phrase are instead replaced by ES, ENP, and EVP (i.e., where nouns and verbs in the lexicon have both entries); this ensures that any idiosyncracies of embedded clauses (i.e., omitted subjects) do not affect 
 
-Our first goal therefore was to represent the most basic of relative clause examples, "the man who ate slept": here, the subject of the embedded relative clause is __the man__.
-
-Next, we looked to capture the passive construction, exhibited in the sentence "the bone that was thrown shattered".
+ Next, we looked to represent the passive construction, exhibited in the sentence “the car that I bought was stolen”, any additional grammatical categories (i.e., adjectives, adverbs, and prepositions), as well as capture the distinction between defining and non-defining relative clauses.
 ...
 
 ## Part III - Remaining Challenges and Future Refinement
@@ -42,16 +43,21 @@ In some instances, these embedded relative clauses may be accompanied by the rel
 
 | Team Member  | Contributions                                             |
 |--------------|-----------------------------------------------------------|
-| Ema Nesic  | Github implementation, supplementary theory, ... |
-| Romaisaa Ahmed | ... |
-| Yeganeh Mohammad Salehi | ... |
+| Ema Nesic  | Github implementation, supplementary theory, grammar implementation |
+| Romaisaa Ahmed | Github implementation, grammar implementation, testsuites |
+| Yeganeh Mohammad Salehi | testsuites, grammar implementation |
 
 ## References
+[1] Additionally, the relative clause itself is optional - one can also merely say “The trail is steep” (grammatical, albeit encoded with less information).
 
-[1] Fong, Sandiway & Ginsburg, Jason. (2023). On the computational modeling of English relative clauses. Open Linguistics. 9. 10.1515/opli-2022-0246. 
+[2] In our grammar file, while the matrix sentence, noun phrase and verb phrase are indicated by S, NP, and VP, respectively, the embedded relative clause sentence, noun phrase and verb phrase are instead replaced by ES, ENP, and EVP (i.e., where nouns and verbs in the lexicon have both entries); this ensures that any idiosyncracies of embedded clauses (i.e., omitted subjects) do not affect 
 
-[2]
+[3] de Vries, M. (2018). Relative Clauses in Syntax. In Oxford Research Encyclopedia of Linguistics https://doi.org/10.1093/acrefore/9780199384655.013.56
 
-[3]
+[4] Fong, S & Ginsburg, J. (2023). On the computational modeling of English relative clauses. *Open Linguistics*. 9. 10.1515/opli-2022-0246. 
+
+[5] Newbrook, J. (2003).
+
+
 
 
