@@ -1,0 +1,688 @@
+DEMO   ENGLISH   CONFIG (1.0)
+  ROOTCAT    S.
+  FILES  .
+  LEXENTRIES   (DEMO ENGLISH).
+  TEMPLATES (DEMO ENGLISH). 
+  RULES   (DEMO ENGLISH).
+  GOVERNABLERELATIONS    SUBJ OBJ OBJ2 COMP XCOMP OBL OBL-?+.
+  SEMANTICFUNCTIONS    ADJUNCT  TOPIC FOCUS POSS STANDARD.
+  NONDISTRIBUTIVES    NUM PERS ANIMACY CONJ-FORM.
+  EPSILON   e.
+  OPTIMALITYORDER NOGOOD.
+
+----
+
+DEMO   ENGLISH   RULES (1.0)
+
+   S --> NP: (^ SUBJ)=!
+	     (! CASE)=nom;
+ 	 VP: ^=!.
+
+   VP --> 	(AUX) "auxiliary introduced for passive" 
+ 	  	ADV*: ! $(^ADJUNCT);
+      V: ^=!; 
+ 	  	(NP: (^OBJ)=!) "direct object"
+ 	  	(NP: (^OBJ2) = !)
+ 	  	(PP: (^OBL-AG) = ! "oblique agent of passive" 
+	       	 (! PFORM) =c by ) 
+	       	 "a constraining equation: require a value with =c"
+		(PP: (^ OBL-TO) = ! "special obl for ditransitives"
+     		 (! PFORM) =c to).
+
+  PP --> P 
+        NP. 
+  
+  AP --> ADV*: ! $ (^ ADJUNCT);
+ 	  A.
+
+   NP --> (D)
+    AP*: ! $ (^ ADJUNCT);
+ 	  N
+    (RP).
+
+  RP --> (R: ^=!)
+    ES: ^=!.
+
+  ES --> (ENP: ^=!)
+     EVP: ^=!.
+    
+  EVP --> ADV*: ! $(^ADJUNCT);
+    EV
+    (ENP: ^=!).
+
+ ENP --> (D: ^=!)
+  A*:!$(^ADJUNCT);
+  EN: ^=!.
+
+----
+
+DEMO ENGLISH TEMPLATES (1.0)
+
+"voice, tense, and aspect"
+PASS(FRAME) = { FRAME "no passive, just give back subcat frame"
+	          (^ PASSIVE) = - "no passive"
+	  		| FRAME "passive"
+	    	(^ PASSIVE) = + "mark as such"
+	    	(^ PARTICIPLE) =c past "make sure to have a past participle"
+	    	(^ OBJ)-->(^ SUBJ) "obj goes to subj"
+	    	{ (^ SUBJ)-->(^ OBL-AG) "either make subj obl-ag"
+	    	| (^ SUBJ)--> NULL "or delete"
+	    	}
+	  	}.
+	  
+DAT-SHIFT(SCHEMATA) = { SCHEMATA
+                 		| SCHEMATA
+                   		(^ OBJ)-->(^ OBJ2)
+                   		(^ OBL-TO)-->(^ OBJ)}.
+
+TENSE(P) =  (^TENSE) = P
+            (^MOOD) = indicative.
+
+TRANS(P) = @(PASS (^ PRED)='P<(^ SUBJ) (^ OBJ)>').
+
+TRANS-OPT(P) = {(^PRED) =  'P<(^SUBJ)(^OBJ)>'
+                |(^PRED) =  'P<(^SUBJ)>'}. 
+
+INTRANS(P) = (^PRED) = 'P<(^SUBJ)>'.
+
+DITRANS(P) = @(DAT-SHIFT @(PASS (^PRED)='P<(^SUBJ)(^OBJ)(^OBL-TO)>')).
+
+PRED(P) = (^ PRED) = 'P'. 
+
+"verbs"
+PRES3SG =  (^TENSE) = Pres
+           (^SUBJ PERS) = 3
+           (^SUBJ NUM) = sg.
+
+"nouns"
+COMMON-NOUN-PNC = (^NUM) = sg
+							    (^PERS) = 3.
+
+"animate nouns"
+EACN =  (^ NUM) = sg
+	      (^ PERS) = 3
+        (^ ANIMACY) = an.
+"inanimate  nouns"
+EICN =  (^ NUM) = sg
+	      (^ PERS) = 3
+        (^ ANIMACY) = in.
+
+----
+
+DEMO ENGLISH LEXICON (1.0)
+
+"nouns"
+animal 	  N *  (^ PRED) = 'animal' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'animal'
+            @EICN.
+
+fish 	  N *  (^ PRED) = 'fish' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'fish'
+            @EICN.
+ 
+dog		N *  (^ PRED) = 'dog' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'dog'
+            @EICN.
+
+otter		N *  (^ PRED) = 'otter'
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'otter'
+            @EICN.
+
+bird 	  N *  (^ PRED) = 'bird' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'bird'
+            @EICN.
+
+shark 	  N *  (^ PRED) = 'shark' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'shark'
+            @EICN.
+
+cat N *  (^ PRED) = 'cat' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'cat'
+            @EICN.
+
+man 	  N *  (^ PRED) = 'man' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'man'
+            @EACN.
+
+surfer 	  N *  (^ PRED) = 'surfer' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'surfer'
+            @EACN.
+
+boy 	  N *  (^ PRED) = 'boy' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'boy'
+            @EACN.
+
+woman 	  N *  (^ PRED) = 'woman' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'woman'
+            @EACN.
+
+mother  N *  (^ PRED) = 'mother' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'mother'
+            @EACN.
+
+grandfather  N *  (^ PRED) = 'grandfather' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'grandfather'
+            @EACN.
+
+sister  N *  (^ PRED) = 'sister' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'sister'
+            @EACN.
+
+brother   N *  (^ PRED) = 'brother' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'brother'
+            @EACN.
+
+cousin   N *  (^ PRED) = 'cousin' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'cousin'
+            @EACN.
+
+friend  N *  (^ PRED) = 'friend' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'friend'
+            @EACN.
+
+neighbour      N *  (^ PRED) = 'neighbour' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'neighbour'
+            @EICN.
+
+classmate    N *  (^ PRED) = 'classmate' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'classmate'
+            @EACN.
+
+teacher  N *  (^ PRED) = 'teacher' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'teacher'
+            @EACN.
+
+principal  N *  (^ PRED) = 'principal' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'principal'
+            @EACN.
+
+doctor  N *  (^ PRED) = 'doctor' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'doctor'
+            @EACN.
+
+nurse   N *  (^ PRED) = 'nurse' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'nurse'
+            @EACN.
+
+book     N *  (^ PRED) = 'book' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'book'
+            @EICN.
+
+bone 	  N *  (^ PRED) = 'bone' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'bone'
+            @EICN.
+
+painting 	  N *  (^ PRED) = 'painting' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'painting'
+            @EICN.
+          
+pyramid 	  N *  (^ PRED) = 'pyramid' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'pyramid'
+            @EICN.
+
+mall 	  N *  (^ PRED) = 'mall' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'mall'
+            @EICN.
+
+event 	  N *  (^ PRED) = 'event' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'event'
+            @EICN.
+
+party 	  N *  (^ PRED) = 'party' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'party'
+            @EICN.
+
+group 	  N *  (^ PRED) = 'group' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'group'
+            @EICN.
+
+car		N *  (^ PRED) = 'car' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'car'
+            @EICN.
+
+cake    N *  (^ PRED) = 'cake' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'cake'
+            @EICN.
+
+city     N *  (^ PRED) = 'city' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'city'
+            @EICN.
+
+day    N *  (^ PRED) = 'day' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'day'
+            @EICN.
+
+door     N *  (^ PRED) = 'door' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'door'
+            @EICN.
+
+house   N *  (^ PRED) = 'house' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'house'
+            @EICN.
+
+hospital  N *  (^ PRED) = 'hospital' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'hospital'
+            @EICN.
+
+landmark  N *  (^ PRED) = 'landmark' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'landmark'
+            @EICN.
+
+light  N *  (^ PRED) = 'light' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'light'
+            @EICN.
+        
+pinata  N *  (^ PRED) = 'pinata' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'pinata'
+            @EICN.
+
+meeting  N *  (^ PRED) = 'meeting' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'meeting'
+            @EICN.
+
+reason  N *  (^ PRED) = 'reason' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'reason'
+            @EICN.
+
+river   N *  (^ PRED) = 'river' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'river'
+            @EICN.
+
+roof     N *  (^ PRED) = 'roof' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'roof'
+            @EICN.
+
+tower   N *  (^ PRED) = 'tower' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'tower'
+            @EICN.
+
+week      N *  (^ PRED) = 'week' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'week'
+            @EICN.
+
+football      N *  (^ PRED) = 'football' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'football'
+            @EICN.
+
+jersey      N *  (^ PRED) = 'jersey' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'jersey'
+            @EICN.
+
+advice      N *  (^ PRED) = 'advice' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'advice'
+            @EICN.
+
+zoo      N *  (^ PRED) = 'zoo' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'zoo'
+            @EICN.
+
+shop      N *  (^ PRED) = 'shop' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'shop'
+            @EICN.
+
+"proper nouns" 
+Steinbeck      N *  (^ PRED) = 'Steinbeck' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'Steinbeck'
+            @EICN.
+
+French      N *  (^ PRED) = 'French' 
+       	    @(COMMON-NOUN-PNC);
+       EN *  (^ EMB) = 'French'
+            @EICN.
+
+"pronouns"
+I   	N *  (^ PRED) = 'Pro';
+       EN *  (^ EMB) = 'Pro'.
+ 
+me      N *  (^ PRED) = 'Pro';
+       EN *  (^ EMB) = 'Pro'.
+ 
+you      N *  (^ PRED) = 'Pro';
+       EN *  (^ EMB) = 'Pro'.
+
+she      N *  (^ PRED) = 'Pro';
+       EN *  (^ EMB) = 'Pro'.
+
+"verbs"
+devours   V *  @(TRANS devour)
+       	    @PRES3SG.
+
+devoured 	V *  @(TRANS devour)
+              {@(TENSE Past) |(^PARTICIPLE) = past};
+         EV * (^ TRY)='devour'
+                @(TENSE Past).
+
+helped 	V *  @(TRANS help)
+              @(TENSE Past);
+         EV * (^ TRY)='help'
+                @(TENSE Past).
+
+borrowed 	V *  @(TRANS borrow)
+              @(TENSE Past);
+         EV * (^ TRY)='borrow'
+                @(TENSE Past).
+
+appears   V *  @(INTRANS appear)
+       	        @PRES3SG.
+
+appeared V *  @(INTRANS appear)
+              @(TENSE Past);
+         EV *   (^ TRY) = 'appear'
+                @(TENSE Past).
+
+eats    V *	@(TRANS-OPT eat)
+       	      @PRES3SG;
+        EV *   (^ TRY) = 'eat'.
+
+enjoys    V *	@(TRANS-OPT enjoy)
+       	      @PRES3SG;
+        EV *   (^ TRY) = 'enoy'.
+
+speaks    V *	@(TRANS speak)
+       	      @PRES3SG;
+        EV *   (^ TRY) = 'speak'.
+
+eat     V *	@(TRANS-OPT eat)
+			  {(^SUBJ PERS)=1|
+			  (^SUBJ PERS)=2}.
+
+eaten		V *	@(TRANS-OPT eat)
+			(^PARTICIPLE) = past;
+          EV *   (^ TRY) = 'eat'.
+
+gifted		V *	@(TRANS gift)
+			(^PARTICIPLE) = past;
+          EV *   (^ TRY) = 'gift'.
+
+shared		V *	@(TRANS share)
+			(^PARTICIPLE) = past;
+          EV *   (^ TRY) = 'share'.
+
+written		V *	@(TRANS write)
+			(^PARTICIPLE) = past;
+          EV *   (^ TRY) = 'write'.
+
+stolen		V *	@(TRANS-OPT steal)
+			(^PARTICIPLE) = past;
+          EV *   (^ TRY) = 'steal'.
+
+employed		V *	@(TRANS employ)
+			(^PARTICIPLE) = past;
+            EV *   (^ TRY) = 'employ'.
+
+promoted		V *	@(TRANS promote)
+			(^PARTICIPLE) = past;
+            EV *   (^ TRY) = 'promote'.
+
+hosted		V *	@(TRANS host)
+			(^PARTICIPLE) = past;
+            EV *   (^ TRY) = 'host'.
+
+closed		V *	@(INTRANS close)
+			(^PARTICIPLE) = past;
+            EV *   (^ TRY) = 'close'.
+
+adopted		V *	@(TRANS adopt)
+			(^PARTICIPLE) = past;
+          EV *   (^ TRY) = 'adopt'.
+
+baked		V *	@(TRANS bake)
+			(^PARTICIPLE) = past;
+          EV *   (^ TRY) = 'bake'.
+
+admired		V *	@(TRANS admire)
+			(^PARTICIPLE) = past;
+          EV *   (^ TRY) = 'admire'.
+
+barks  V *   @(INTRANS bark) 
+       	      @PRES3SG;
+      EV *   (^ TRY) = 'bark'.
+
+saw   V *   @(TRANS see)
+            @(TENSE Past);
+      EV *  (^ TRY) = 'saw'
+            @(TENSE Past).
+
+works    V *	@(TRANS work)
+       	      @PRES3SG;
+        EV *   (^ TRY) = 'work'.
+
+worked   V *   @(TRANS work)
+            @(TENSE Past);
+      EV *  (^ TRY) = 'work'
+            @(TENSE Past).
+
+lent   V *   @(TRANS lend)
+            @(TENSE Past);
+      EV *  (^ TRY) = 'lend'
+            @(TENSE Past).
+
+plays   V *   @(TRANS play)
+       	      @PRES3SG;
+        EV *   (^ TRY) = 'play'.
+
+wears  V *  @(TRANS wear) 
+       	      @PRES3SG;
+       EV *   (^ TRY) = 'wear'.
+
+talks  V *  @(TRANS talk) 
+       	      @PRES3SG;
+       EV *   (^ TRY) = 'talk'.
+
+teaches  V *  @(TRANS teach) 
+       	      @PRES3SG;
+       EV *   (^ TRY) = 'teach'.
+
+offers  V *  @(TRANS offer) 
+       	      @PRES3SG;
+       EV *   (^ TRY) = 'offer'.
+
+tastes  V *  @(TRANS taste) 
+       	      @PRES3SG;
+       EV *   (^ TRY) = 'taste'.
+
+flew  V *  @(INTRANS fly)
+              @(TENSE Past);
+      EV *  (^ TRY) = 'fly'
+              @(TENSE Past).
+
+drove  V *  @(TRANS drive)
+              @(TENSE Past);
+      EV *  (^ TRY) = 'drive'
+              @(TENSE Past).
+
+sang  V *  @(INTRANS sing)
+              @(TENSE Past);
+      EV *  (^ TRY) = 'sing'
+              @(TENSE Past).
+
+slept V *  @(INTRANS sleep)
+              @(TENSE Past);
+      EV *  (^ TRY) = 'sleep'
+              @(TENSE Past).
+
+met V *  @(TRANS met)
+              @(TENSE Past);
+      EV *  (^ TRY) = 'met'
+              @(TENSE Past).
+
+swam V *  @(INTRANS swim)
+              @(TENSE Past);
+      EV *  (^ TRY) = 'swim'
+              @(TENSE Past).
+
+paddled V *  @(TRANS paddle)
+              @(TENSE Past);
+      EV *  (^ TRY) = 'paddle'
+              @(TENSE Past).
+
+reflected V *  @(TRANS reflect)
+              @(TENSE Past);
+      EV *  (^ TRY) = 'reflect'
+              @(TENSE Past).
+
+bought V *  @(TRANS buy)
+              @(TENSE Past);
+      EV *  (^ TRY) = 'buy'
+              @(TENSE Past).
+
+"auxiliaries"
+was		AUX *	(^TENSE)= Past
+				{ (^ SUBJ PERS) = 1
+              	| (^ SUBJ PERS) = 3}
+              	(^ SUBJ NUM) = sg.
+
+
+"determiners and pronouns"
+the  D *  (^ DEF) = +.
+
+a   D *  (^ DEF) = -.
+
+an   D *  (^ DEF) = -.
+
+The  D *  (^ DEF) = +.
+
+our  D *  (^ DEF) = +.
+
+my  D *  (^ DEF) = +.
+
+My  D *  (^ DEF) = +.
+
+his  D *  (^ DEF) = +.
+
+we  D *  (^ DEF) = +.
+
+he  EN *  (^ DEF) = +.
+
+"relative clause markers"
+that  R *   (^ REL) = 'that'.
+
+who  R *   (^ REL) = 'who'.
+
+whom  R *   (^ REL) = 'whom'.
+
+which  R *   (^ REL) = 'which'.
+
+where  R *   (^ REL) = 'where'.
+
+
+"adjectives" 
+white    A *   (^PRED) = 'white'.
+
+Parisian    A *   (^PRED) = 'Parisian'.
+
+library    A *   (^PRED) = 'library'.
+
+pedantic    A *   (^PRED) = 'pedantic'.
+
+Arsenal    A *   (^PRED) = 'arsenal'.
+
+blue    A *   (^PRED) = 'blue'.
+
+clean    A *   (^PRED) = 'clean'.
+
+delicious    A *   (^PRED) = 'delicious'.
+
+famous    A *   (^PRED) = 'famous'.
+
+good    A *   (^PRED) = 'good'.
+
+great    A *   (^PRED) = 'great'.
+
+interesting    A *   (^PRED) = 'interesting'.
+
+kind    A *   (^PRED) = 'kind'.
+
+local    A *   (^PRED) = 'local'.
+
+old    A *   (^PRED) = 'old'.
+
+personal    A *   (^PRED) = 'personal'.
+
+red    A *   (^PRED) = 'red'.
+
+new    A *   (^PRED) = 'new'.
+
+special    A *   (^PRED) = 'special'.
+
+aggressive    A *   (^PRED) = 'aggressive'.
+
+
+"adverbs"
+quickly   ADV * @(PRED quickly). 
+
+recently   ADV * @(PRED recently). 
+
+loudly   ADV * @(PRED loudly). 
+
+very   ADV * @(PRED very).
+
+languidly   ADV * @(PRED languidly).
+
+tirelessly   ADV * @(PRED tirelessly).
+
+
+"prepositions"
+
+in		P * 	(^PFORM) = in.
+
+by		P * 	(^PFORM) = by.
+
+with		P * 	(^PFORM) = with.
+
+at		P * 	(^PFORM) = at.
+
+----
