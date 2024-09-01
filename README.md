@@ -4,13 +4,13 @@ _Group members: Ema Nesic, Romaisaa Ahmed, Yeganeh Mohammad Salehi_
 
 ## Introduction
 
-With the assignment prompt of accounting for a linguistic phenomenon in xle structure, our group looked to capture English relative clauses: seeing that all three members have different native languages, we reasoned English grammatical constructions would serve well as a common denominator. Additionally, we chose to look at relative clauses, a cross-linguistic phenomenon that, in addition to not having been previously discussed in the present course, is syntactically straightforward and may be implemented in our existing grammar.
+Given the assignment prompt of accounting for a linguistic phenomenon in XLE, our group looked to do so in English, seeing that all three members had different native languages: we reasoned English grammatical constructions would serve well as an impartial common denominator. In English, then, we chose to look at relative clauses, a cross-linguistic phenomenon that, in addition to not having been previously discussed in the course, is syntactically relatively straightforward and may be implemented within our existing grammar.
 
 
 ### Relative Clauses
-Relative clauses refer to some clause that modifies a preceding entity, indicated in English by relative pronouns (i.e., who, when, that) - this is illustrated in the sentence "I see the forest **where**
-I used to hike", where the pronoun **where** modifies _the forest_.
+A relative clause is a subordinate clause that modifies its preceding noun phrase (de Vries, 2018). Within this embedded clause, the relative marker (i.e., the head of the embedded phrase), is indicated by English relative pronouns (i.e., who, when, that, etc.); these elements, while informative, are optional in English relative clauses, a finding that is not consistent across languages (i.e., French, where the absence of the relative marker renders the construction ungrammatical). This is illustrated in the English sentence "The trail that I hiked is steep”, where the pronoun **where** modifies _the trail; conversely, “The trail I hiked is steep” is an equally permissible construction*, and indeed, an example of linguistic variation (Newbrook, 2003). 
 
+Further, there exists variation in the choice of marker - although technically grammatical to use ‘who’ with animate, and ‘that’ with inanimate subjects, native English speakers confound the two - this is reflected in the grammar, where either variant results in a correct parse; thus an animacy restraint was omitted).
 
 ## Part I - Motivation
 
