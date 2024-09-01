@@ -10,7 +10,7 @@ Given the assignment prompt of accounting for a linguistic phenomenon in XLE, ou
 ### Relative Clauses
 A relative clause is a subordinate clause that modifies its preceding noun phrase (de Vries, 2018). Within this embedded clause, the relative marker (i.e., the head of the embedded phrase), is indicated by English relative pronouns (i.e., who, when, that, etc.); these elements, while informative, are optional in English relative clauses, a finding that is not consistent across languages (i.e., French, where the absence of the relative marker renders the construction ungrammatical). This is illustrated in the English sentence "The trail that I hiked is steep”, where the pronoun **where** modifies _the trail; conversely, “The trail I hiked is steep” is an equally permissible construction*, and indeed, an example of linguistic variation (Newbrook, 2003). 
 
-Further, there exists variation in the choice of marker - although technically grammatical to use ‘who’ with animate, and ‘that’ with inanimate subjects, native English speakers confound the two - this is reflected in the grammar, where either variant results in a correct parse; thus an animacy restraint was omitted).
+Further, there exists variation in the choice of marker - although technically grammatical to use ‘who’ with animate, and ‘that’ with inanimate subjects, native English speakers confound the two - as a result, this is reflected in the grammar, where either variant results in a correct parse; thus an animacy restraint was omitted).
 
 ## Part I - Motivation
 
