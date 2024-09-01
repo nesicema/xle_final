@@ -21,8 +21,7 @@ Having looked at the relevant c-structure for relative clauses, then, we deduced
 Thus, the rules governing NPs must be modified to accommodate this embedded clause, as an utterance may be grammatical in either reading (i.e., "the man slept" vs. "the man who ate slept"): here, the clause is composed of the head marker (denoted as R) as well as a simplified sentence structure, denoted as ES (i.e., embedded sentence).
 There are several common relative clause pronouns in English - that, who, which, whose, whom, etc. Some of these pronouns are restricted to certain types of entities (i.e., whom for accusative case, who for animate, and which or that for inanimate entities), and so these features may be encoded as supplementary semantic information.
 
-Finally, there exist two types of relative clauses: defining and non-defining clauses. In the first variant, ...
-...
+Finally, there exist two types of relative clauses: defining and non-defining clauses. In the first variant, the information relayed in the relative clause is necessary to deduce who is being spoken of (i.e., "John, who lives next door, is a good neighbhor). This is in contrast to the second variant, whose relative clause does not add contentful information as to the entity specified (i.e., "John, whom I met, was promoted by his employee").
 
 ## Part II - Implementation
 
@@ -30,7 +29,6 @@ Our first goal therefore was to represent the most basic of relative clause exam
 In our grammar file, while the matrix sentence, noun phrase and verb phrase are indicated by S, NP, and VP, respectively, the embedded relative clause sentence, noun phrase and verb phrase are instead replaced by ES, ENP, and EVP (i.e., where nouns and verbs in the lexicon have both entries); this ensures that any idiosyncracies of embedded clauses (i.e., omitted subjects) do not affect 
 
  Next, we looked to represent the passive construction, exhibited in the sentence “the car that I bought was stolen”, any additional grammatical categories (i.e., adjectives, adverbs, and prepositions), as well as capture the distinction between defining and non-defining relative clauses.
-...
 
 ## Part III - Remaining Challenges and Future Refinement
 
