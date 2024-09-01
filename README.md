@@ -59,7 +59,7 @@ An additional issue arises in accurately disambiguating relative pronouns that s
 
 [4] Fong, S & Ginsburg, J. (2023). On the computational modeling of English relative clauses. *Open Linguistics*. 9. 10.1515/opli-2022-0246. 
 
-[5] Newbrook, J. (2003).
+[5] Mark, N. (2003, January 10). Which way? that way? variation and ongoing changes in the English relative clause. https://www.researchgate.net/publication/229922846_Which_way_That_way_Variation_and_ongoing_changes_in_the_English_relative_clause 
 
 
 
