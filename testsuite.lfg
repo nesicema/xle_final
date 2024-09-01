@@ -1,0 +1,101 @@
+#Additional Sentences (Unparsable)
+#the explanations are above the sentences
+
+#Unification failure, subject-verb agreement
+
+The boy who play football wears a red Arsenal jersey.
+ 
+#Completeness violation
+
+The boy who plays football wears.
+ 
+#Missing PRED value, completeness violation
+
+The boy who wears a red Arsenal jersey
+  
+#Completeness violation
+
+The car that I bought
+ 
+#Missing PRED value, completeness violation
+
+The otter that swam
+ 
+#Coherence violation
+
+The teacher who tirelessly helped me was fired by our new principal
+ 
+#Spelling mistake
+
+The dog that aggressively barks was adopted by our unfriendly neighbour
+
+#using unidentified word "is"
+
+The teacher who tirelessly helped me is promoted by our new principal
+
+#using who as a question word
+
+Who paddled loudly? 
+
+#subject verb agreement
+
+My mother who teach was admired 
+
+#that isn't identified as a linker
+
+that reflected light by the Pyramids was admired
+
+#Unification failure, subject-verb agreement
+
+The shops where I worked was closed by the owner
+ 
+#Missing rules, unknown words
+
+The sister who bought the pinata hosted a party in the cafeteria
+ 
+
+
+#Defining Sentences 
+
+The boy who plays football wears a red Arsenal jersey
+
+The car that I bought was stolen 
+
+The otter that devoured the white fish languidly swam 
+
+The dog that aggressively barks was adopted by our unfriendly neighbour
+
+The teacher who tirelessly helped me was promoted by our new principal
+
+The book that the dog devoured was written by Steinbeck
+
+The man whom she met was employed by the zoo 
+
+The surfer who loudly paddled was quickly devoured by the shark 
+
+The pedantic doctor whom I met was promoted by the hospital 
+
+The white bird that sang was admired
+
+
+
+#Non-Defining Relative clauses
+
+ My mother who teaches was admired 
+
+ our car that I lent was stolen 
+
+ The pyramid that reflected the light was admired
+
+ The mall which recently closed hosted an event 
+
+ The sister who bought the pinata hosted a party 
+
+ The new car that I drove was gifted by my grandfather 
+
+ The cake which my mother baked was shared by the group 
+
+ The library book that I borrowed offers great advice 
+
+
+
