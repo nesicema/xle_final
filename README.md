@@ -34,8 +34,12 @@ In our grammar file, while the matrix sentence, noun phrase and verb phrase are 
 
 In some instances, these embedded relative clauses may be accompanied by the relevant punctuation (i.e., "the man who ate, slept"); because the relative positions of the words are illustrated in the syntactic tree (i.e., whether a verb occurs in the matrix or embedded clause), we reasoned that punctuation may be omitted; this, however, may be implemented in a future project.
 
-...
 
+Depending on the whether the embedded clause was active or passive, the relative clause element was variable in its being obligatory:
+“the trail [that] I hiked was steep” vs. “the trail I hiked was steep” - both grammatical
+“the bone that was thrown shattered” vs. *”the bone was thrown shattered” - variable grammaticality
+
+Thus, further improvement of the rules may include taking grammatical voice into consideration, encoding it as a feature of the relative clause marker, R.
 
 ## Contributions
 
